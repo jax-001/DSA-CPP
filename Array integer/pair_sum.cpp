@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+void find_pair(int n, int arr[], int target){
+    for(int i = 0; i<n; i++){
+        for (int j = i+1; j<n; j++){
+            if(arr[i] + arr[j] == target){
+                cout << arr[i] << ',' << arr[j] << endl;
+            }
+        }
+    }
+    return ;
+}
+
+void take_input(int n, int arr[]){
+    for(int i = 0; i<n; i++){
+        cin >> arr[i];
+    }
+    return ;
+}
+
+int main(){
+    int n;
+    cout << "Enter the size of the array: ";
+    cin >> n;
+    int arr[100];
+    cout << "Take input for arr[]: " << endl;
+    take_input(n,arr);
+    cout << "Enter the target value: ";
+    int target;
+    cin >> target;
+    // find pair that add to target...
+    find_pair(n,arr,target);
+    return 0;
+}
